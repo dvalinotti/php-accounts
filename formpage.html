@@ -1,0 +1,65 @@
+
+ <style>
+
+ #amount {display: none;}
+ #field  {width: 70%; margin: auto;}
+
+ #myimage
+ {
+     width: 50%;
+     height: 50%;
+ }
+
+ </style>
+
+ <script>
+ function appear(){
+
+   ptr1 = document.getElementById('amount')
+   ptr2 = document.getElementById('choice')
+
+   $menuvalue = ptr2.value
+
+   if ($menuvalue == "D" ) {
+     ptr1.style.display = "block";
+     return;
+   }
+   if ( $menuvalue == "W") {
+     ptr1.style.display = "block";
+     return;
+   }
+   else {
+     ptr1.style.display = "none"
+   }
+
+ }
+
+ </script>
+
+
+ <form action="formpagehandler.php">
+   <fieldset id="field"><legend> Bank Application </legend>
+
+   <input type="number"  step="1"  name="amount" id="amount"> Amount<br><br>
+
+   <select name="choice" id="choice" onchange="appear()">
+		<option value="C">Choose</option>
+		<option value="S">Show</option>
+		<option value="D">Deposit</option>
+		<option value="W">Withdraw</option>
+
+		<?php
+			include("menu.php");
+		?>
+   </select>
+   <br><br>
+   <input type="checkbox" name="mail" value="Yes"> Mail Copy <br><br>
+   
+   <input type="submit" name="Submit">
+ </fieldset>
+   <br>
+   </form>
+<a href="logout.php">Logout</a>
+<p> </p>
+<img src="ass2screen1.jpg" id="myimage" alt="">
+<img src="ass2screen2.jpg" id="myimage" alt="">

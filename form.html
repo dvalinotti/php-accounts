@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script>
+	function f(){
+		var r = document.getElementById("choice").value;
+		if (r == 'S'){
+			document.getElementById("amnt").style.display = "none";
+			document.getElementById("number").style.display = "inline";
+		}
+		if (r == 'D'){
+			document.getElementById("number").style.display = "none";
+			document.getElementById("amnt").style.display = "inline";
+		}
+		if (r == 'W') {
+			document.getElementById("amnt").style.display = "inline";
+			document.getElementById("number").style.display = "none";
+		}
+	}
+</script>
+<form action="x.php">
+	<!--<input type=text name="user" placeholder="Enter username" required autofocus>Username: <br>
+	<input type=text name="password" placeholder="Enter password" autocomplete="off">Password: <br>
+	<input type=text name="amount" placeholder="Enter deposit amount" autocomplete="off">Amount: <br>
+	<input type="checkbox" id="mail" name="mail" >mail receipt<br>
+	<input type=submit>
+	-->
+	<fieldset class="F1">
+		<legend>Transaction</legend> 
+		<input type="text" name="user" id="user" placeholder="required" required autofocus autocomplete="on"> Username<br>
+		<input type="text" name="pass" id="pass" placeholder="required" required autocomplete="off"> Password<br>
+		<input type="number" name="amnt" id="amnt" placeholder="0.00" autocomplete="off" step=.01> Amount<br>
+		<input type="number" name="number" id="number" placeholder="2" autocomplete="off" step=1> Number<br>
+		
+		<select name="choice" id="choice" onchange="f()">
+			<option selected=selected>Choose one</option>
+			<option value='S'>Show</option>
+			<option value='D'>Deposit</option>
+			<option value="W">Withdraw</option>
+		</select>service<br>
+		<input type="checkbox" id="mail" name="mail"> Mail receipt <br>
+	</fieldset>
+		<input type="submit">
+</form>
+</html>
